@@ -20,7 +20,7 @@ return new class extends Migration
             $table->text('alamat');
             $table->string('no_telp');
             $table->boolean('jenis_kelamin');
-            $table->timestamp('');
+            $table->timestamps();
         });
     }
 

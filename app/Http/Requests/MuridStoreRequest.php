@@ -2,36 +2,25 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class MuridStoreRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
     public function authorize(): bool
     {
         return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, ValidationRule|array<mixed>|string>
-     */
     public function rules(): array
     {
         return [
-
-            'nis'=>'required',
-            'nama'=>'required',
-            'rombel'=>'required',
-            'rayon'=>'required',
-            'alamat'=>'required',
-            'no_telp'=>'required',
-            'jenis_kelamin'=>'required',
-            
+            'nis'           => 'required|integer',
+            'nama'          => 'required|string|max:255',
+            'rombel'        => 'required|string|max:255',
+            'rayon'         => 'required|string|max:255',
+            'alamat'        => 'required|string',
+            'no_telp'       => 'required|string|max:20',
+            'jenis_kelamin' => 'required|boolean',
         ];
     }
 }
